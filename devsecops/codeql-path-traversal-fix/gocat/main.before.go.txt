@@ -1,0 +1,34 @@
+package main
+
+import (
+	"flag"
+	"fmt"
+	"io"
+	"os"
+	"path/filepath"
+)
+
+func catFile(baseDir, name string, w io.Writer) error {
+	full := filepath.Join(baseDir, name)
+	data, err := os.ReadFile(full)
+	if err != nil {
+		return err
+	}
+	_, err = w.Write(data)
+	return err
+}
+
+func main() {
+	base := flag.String("base", ".", "base directory for reads")
+	flag.Parse()
+
+	if flag.NArg() != 1 {
+		fmt.Fprintln(os.Stderr, "usage: gocat -base <dir> <file>")
+		os.Exit(2)
+	}
+
+	if err := catFile(*base, flag.Arg(0), os.Stdout); err != nil {
+		fmt.Fprintf(os.Stderr, "gocat: %v\n", err)
+		os.Exit(1)
+	}
+}

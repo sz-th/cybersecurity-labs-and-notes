@@ -1,0 +1,28 @@
+﻿auto lo
+iface lo inet loopback
+
+iface eno1 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+	address 10.0.0.1/24
+	gateway 10.0.0.254
+	bridge-ports eno1
+	bridge-stp off
+	bridge-fd 0
+	bridge-vlan-aware yes
+	bridge-vids 2-4094
+
+auto dummy0
+iface dummy0 inet manual
+    pre-up ip link add dummy0 type dummy 2>/dev/null || true
+
+auto vmbr1
+iface vmbr1 inet manual
+        bridge-ports dummy0
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes
+        bridge-vids 2-4094
+
+source /etc/network/interfaces.d/*

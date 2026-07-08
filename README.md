@@ -1,29 +1,40 @@
-# Cybersecurity Labs and Notes
+﻿# Cybersecurity Labs and Notes
 
-Zbiór materiałów z laboratoriów i projektów z obszaru cyberbezpieczeństwa — student 4. roku CS.
+Zbior materialow z laboratoriow i projektow cyberbezpieczenstwa — student 4. roku CS.
 
 ## Struktura
 
 ```
-linux-hardening/CyberSentinel/   — audyt bezpieczeństwa Linux (projekt zaliczeniowy)
-reports/                         — przykładowe raporty (anonimizowane)
+linux-hardening/CyberSentinel/          — audyt Linux (Bash/Perl/Python)
+network-security/proxmox-homelab/       — dokumentacja labu Proxmox (anonimizowana)
+web-app-security/xss-csrf-test-suite/   — testy XSS/CSRF (Selenium, Playwright)
+devsecops/codeql-path-traversal-fix/    — SAST: CodeQL path traversal (Go + Node)
+reports/                                — raporty PoC (anonimizowane)
 ```
 
 ## Linux Hardening — CyberSentinel
-
-Automatyczny audyt systemu Linux: konfiguracja SSH, pliki SUID/SGID, firewall, uprawnienia `/etc/shadow`, analiza logów auth (Perl), raport HTML, moduł threat intelligence (Python).
 
 ```bash
 cd linux-hardening/CyberSentinel
 sudo ./sentinel.sh -v -l ./data/auth.log
 ```
 
-Wymagania: Bash, Perl, Python 3, uprawnienia root (część testów audytowych).
+## Network Security — Proxmox Homelab
+
+Dokumentacja homelabu: izolowana siec, VM Router (dual-homed), stacja forensics. Zobacz `network-security/proxmox-homelab/README.md`.
+
+## Web App Security — XSS / CSRF
+
+Testy automatyczne na aplikacji Go+React. Zobacz `web-app-security/xss-csrf-test-suite/README.md`.
+
+## DevSecOps — CodeQL
+
+Naprawa path traversal w projektach OSS + workflow GitHub Actions. Zobacz `devsecops/codeql-path-traversal-fix/README.md`.
 
 ## Raporty
 
-`reports/generic-waf-pentest-report.md` — generyczny raport z testów webowych z WAF (dane fikcyjne: ACME Corp, secure-app.local). Służy jako próbka formatu raportu w portfolio.
+`reports/generic-waf-pentest-report.md` — generyczny raport pentest (ACME Corp, secure-app.local).
 
 ## Disclaimer
 
-Materiały edukacyjne. Testy penetracyjne i skrypty ofensywne stosuj wyłącznie w środowiskach autoryzowanych.
+Materialy edukacyjne. Testy i skrypty stosuj wylacznie w srodowiskach autoryzowanych.
