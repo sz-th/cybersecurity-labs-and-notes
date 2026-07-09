@@ -1,12 +1,12 @@
 ﻿# XSS / CSRF Test Suite
 
-Automatyczne testy bezpieczeństwa aplikacji demo (Go + React). Źródło: projekt akademicki obiektowe/8.
+Automatyczne testy bezpieczeństwa aplikacji demo (Go + React).
 
 ## Zakres testów
 
 | Test | Plik | Opis |
 |------|------|------|
-| XSS | `tests/selenium/test_3_5_xss.py` | 11 payloadów — weryfikacja braku wykonania JS |
+| XSS | `tests/selenium/test_3_5_xss.py` | 10 payloadów — weryfikacja braku wykonania JS |
 | CSRF | `tests/selenium/test_4_5_csrf.py` | Atak z zewnętrznej strony `csrf_attack.html` |
 | Rejestracja | `tests/selenium/test_3_registration.py` | Walidacja formularza |
 | E2E | `tests/playwright/tests/e2e.spec.js` | Scenariusz end-to-end |

@@ -5,8 +5,8 @@ iface eno1 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-	address 10.0.0.1/24
-	gateway 10.0.0.254
+	address 192.168.1.19/24
+	gateway 192.168.1.1
 	bridge-ports eno1
 	bridge-stp off
 	bridge-fd 0
