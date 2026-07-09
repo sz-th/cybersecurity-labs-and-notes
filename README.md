@@ -1,7 +1,6 @@
 ﻿# Cybersecurity Labs and Notes
 
-Zbior materialow z laboratoriow i projektow cyberbezpieczenstwa — student 4. roku CS.
-
+Zbior materialow z laboratoriow i projektow cyberbezpieczenstwa
 ## Struktura
 
 ```
